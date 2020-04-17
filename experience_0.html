@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>	</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<style type="text/css">
+		.images  {
+			background-image:url(menu.jpg);
+			background-size:100%;
+		}
+		.btun:hover {
+			background:#E8F18B;
+			transition:0.5s;
+		}
+		.menu {
+			background:green;
+			margin-top:300px;
+			margin-left:auto;
+			margin-right:auto;
+			width:500px;
+			height:200px;
+		}
+		.arena1 {
+			display:none;
+		}
+		.btun {
+			background:#DFF03A;
+			border:1px solid orange;
+			width:300px;
+			height:50px;
+			margin-top:50px;
+			margin-left:100px;
+			transition:0.5s;
+			
+		}
+		.monster_img {
+			position:absolute;
+			width:300px;
+			left:290px;
+			top:100px;
+		}
+		.absolute {
+			position:absolute;
+		}
+		.struct {
+			display:none;
+		} 
+	</style>
+</head>
+<body class="images">
+	<button class="absolute struct down" style="left:55%; top:60%; transition:1s"> < </button>
+	<button class="absolute struct up" style="left:90%; top:60%; transition:1s"> > </button>
+	<h1 class="absolute struct" style="left:10%; top:22%">Money: <span class="cash">0</span></h1>
+	<h1 class="absolute struct" style="left:90%; top:90%">DMG: <span class="dmg"></span></h1>
+	<h1 class="absolute struct" style="left:63%; top:23%">Level: <span class="level">1</span></h1>
+	<div class="absolute col-6 struct" style="left:65%; top:30%">
+		<div class="col-6 bg-success health">
+			<h1>HP: <span class="hp"></span></h1>
+		</div>
+	</div>
+	<div class="menu">
+		<button class="btun menu_btn">Начать играть</button>
+	</div>
+<div class="row">
+	<div class="arena1 col-6 bg-danger" style="height:600px; margin-top:320px">
+		<div class="bg-danger">
+			<div class="row">
+				<div class="col-3 bg-primary ml-3" style="height:100px">
+					<div class="row">
+						<div style="background:url(weap1.png); background-size:100% 100%;" class="col-4">
+
+						</div>
+						<div class="col-3">
+							<p class="mt-1 mb-1">10р</p>
+							<p class="mt-1 mb-1">+1</p>
+							<button class="btn_1">Купить</button>
+						</div>
+					</div>
+				</div>
+				<div class="col-3 bg-primary ml-5" style="height:100px">
+
+				</div>
+			</div>
+			<div class="row mt-2">
+				<div class="col-3 bg-primary ml-3" style="height:100px">
+					<div class="row">
+						<div style="background:url(weap2.png); background-size:100% 100%;" class="col-4">
+
+						</div>
+						<div class="col-3">
+							<p class="mt-1 mb-1">100р</p>
+							<p class="mt-1 mb-1">+20</p>
+							<button class="btn_2">Купить</button>
+						</div>
+					</div>
+				</div>
+				<div class="col-3 ml-5 bg-primary" style="height:100px">
+
+				</div>
+			</div>
+			<div class="row mt-2">
+				<div class="col-3 bg-primary ml-3" style="height:100px">
+
+				</div>
+				<div class="col-3 ml-5 bg-primary" style="height:100px">
+
+				</div>
+			</div>
+			<div class="row mt-2">
+				<div class="col-3 bg-primary ml-3" style="height:100px">
+
+				</div>
+				<div class="col-3 ml-5 bg-primary" style="height:100px">
+
+				</div>
+			</div>
+			<div class="row mt-2">
+				<div class="col-3 bg-primary ml-3" style="height:100px">
+
+				</div>
+				<div class="col-3 ml-5 bg-primary" style="height:100px">
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="monster col-6 struct" style="height:1000px; margin-top:320px">
+		<img src="" class="monster_img">
+
+	</div>
+</div>
+	<script type="text/javascript">
+		let menu = document.querySelector(".menu");
+		let menu_btn = document.querySelector(".menu_btn");
+
+		let arena1 = document.querySelector(".arena1");
+		
+		let images = document.querySelector(".images");
+
+		let struct = document.querySelectorAll(".struct");
+
+		let monster = document.querySelectorAll(".monster");
+		let monsters_1 = ["1.png", "2.png", "3.png", "4.png", "5.png"];
+		let monster_img = document.querySelector(".monster_img");
+		let hp = document.querySelector(".hp");
+		let health = document.querySelector(".health");
+
+		let dmg = document.querySelector(".dmg");
+		let damage = 1;
+		let cash = document.querySelector(".cash");
+		let money = 0;
+		let level = document.querySelector(".level");
+		let lvl = 1;
+		let max = 1;
+
+		let btn1 = document.querySelector(".btn_1");
+		let btn2 = document.querySelector(".btn_2");
+
+		let ups = document.querySelector(".up");
+		let downs = document.querySelector(".down");
+
+		let getRandom = function() {
+			let n=Math.random()*4;
+			n = Math.round(n);
+			return n;
+		}
+		let m1 = {
+			hp:25,
+			time:10,
+			img:"1.png",
+		}
+
+		menu_btn.onclick = function () {
+			menu.style.display = "none";
+			arena1.style.display = "block";
+			images.style.backgroundImage = "url(arena1.jpg)";
+			monster_img.src = monsters_1[getRandom()];
+			for (let i=0; i<struct.length; i=i+1) {
+				struct[i].style.display = "block";
+			};
+			hp.innerHTML = m1.hp;
+			dmg.innerHTML = damage;
+
+		}
+		
+		btn1.onclick = function () {
+			if (money >= 10) {
+				damage = damage + 1;
+				dmg.innerHTML = damage;
+				money = money - 10;
+				cash.innerHTML = money;
+			}
+		}
+		btn2.onclick = function () {
+			if (money >= 100) {
+				damage = damage + 20;
+				dmg.innerHTML = damage;
+				money = money - 100;
+				cash.innerHTML = money;
+			}
+		}
+		ups.onclick = function () {
+			lvl = lvl + 1;
+			level.innerHTML = lvl;
+		}
+
+		downs.onclick = function () {
+			lvl = lvl - 1;
+			level.innerHTML = lvl;
+		}
+		monster_img.onclick = function () {
+			m1.hp = m1.hp - damage;
+			m1.hp = Math.round(m1.hp);
+			hp.innerHTML = m1.hp;
+			if (m1.hp <= 0) {
+				lvl = lvl + 1;
+				max = max + 1;
+				level.innerHTML = lvl;
+				m1.hp = (25 * lvl * lvl * lvl) / 1.5;
+				monster_img.src = monsters_1[getRandom()];
+				money = money + 10 * lvl;
+				cash.innerHTML = money;
+			}
+		}
+	</script> 
+</body>
+</html>

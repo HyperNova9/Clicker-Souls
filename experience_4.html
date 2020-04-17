@@ -1,0 +1,1454 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>	</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<style type="text/css">
+		.images  {
+			background-image:url(menu.jpg);
+			background-size:100%;
+		}
+		.btun:hover {
+			background:#E8F18B;
+			transition:0.5s;
+		}
+		.btunEnd:hover {
+			background:#E8F18B;
+			transition:0.5s;
+		}
+		.ups:hover {
+			background:darkgrey;
+		}
+		.downs:hover {
+			background:darkgrey;
+		}
+		.menu {
+			background:orange;
+			margin-top:300px;
+			margin-left:auto;
+			margin-right:auto;
+			border: 3px solid white;
+			width:500px;
+			height:200px;
+		}
+		.end {
+			display: none;
+			background:orange;
+			margin-top:300px;
+			margin-left:auto;
+			margin-right:auto;
+			border: 3px solid white;
+			width:500px;
+			height:300px;
+		}
+		.arena1 {
+			display:none;
+		}
+		.btun {
+			font-family:arial;
+			background:#DFF03A;
+			border:2px solid white;
+			width:300px;
+			height:50px;
+			margin-top:50px;
+			margin-left:100px;
+			transition:0.5s;
+			
+		}
+		.btunEnd {
+			font-family:arial;
+			background:#DFF03A;
+			border:2px solid white;
+			width:300px;
+			height:50px;
+			margin-top:30px;
+			margin-left:100px;
+			transition:0.5s;
+			
+		}
+		.monster_img {
+			position:absolute;
+			width:300px;
+			left:290px;
+			top:100px;
+		}
+		.absolute {
+			position:absolute;
+		}
+		.struct {
+			display:none;
+		}
+		.structBoss {
+			display:none;
+		}
+		.boss4 {
+			display:none;
+		}
+		.boss5 {
+			display:none;
+		}
+	</style>
+</head>
+<body class="images">
+	<h1 class="absolute structBoss bg-white" style="left:70%; top:92%">Passive Time:<span class="skill"></span>s</h1>
+	<h1 class="absolute struct bg-white" style="left:70%; top:85%">Time: <span class="timer"></span>s</h1>
+	<h1 class="absolute struct bg-white" style="left:10%; top:22%">Money: <span class="cash">0</span></h1>
+	<h1 class="absolute struct bg-white" style="left:90%; top:90%">DMG: <span class="dmg"></span></h1>
+	<h1 class="absolute struct bg-white" style="left:66%; top:27%; width: 400px">Level: <span class="level">1</span></h1>
+	<div class="absolute col-6 struct bossF" style="left:65%; top:33%">
+		<div style="width:404px; border: 2px solid black; height:54px">
+			<div class="health" style="width:400px; height:50px; background:#41D600; transition:0.2s">
+				<h1 class="absolute struct" style="left:2%; top:5%">HP: <span class="hp"></span></h1>
+			</div>
+		</div>
+	</div>
+	<div class="absolute col-6 boss5" style="left:65%; top:39%">
+		<div style="width:404px; border: 2px solid black; height:54px">
+			<div class="health5" style="width:400px; height:50px; background:#41D600; transition:0.2s">
+				<h1 class="absolute struct" style="left:2%; top:5%">HP: <span class="hp5"></span></h1>
+			</div>
+		</div>
+	</div>
+	<div class="absolute col-6 boss5" style="left:65%; top:45%">
+		<div style="width:404px; border: 2px solid black; height:54px">
+			<div class="health5" style="width:400px; height:50px; background:#41D600; transition:0.2s">
+				<h1 class="absolute struct" style="left:2%; top:5%">HP: <span class="hp5"></span></h1>
+			</div>
+		</div>
+	</div>
+	<div class="menu">
+		<button class="btun menu_btn">Начать играть</button>
+	</div>
+	<div class="end">
+		<h4 class="text-center mt-3" style="font-family:arial; font-weight:bold">Поздравляю с прохождением игры!</h4>
+		<button class="btunEnd menu_end continue">Продолжить</button>
+		<button class="btunEnd menu_end restart">Начать заново</button>
+		<p class="text-center mt-3" style="font-family:arial; font-weight:bold">FAQ: Дальше идёт бесконечный игровой процесс, боссов больше не будет!</p>
+	</div>
+<div class="row">
+	<div class="arena1 col-6" style="height:600px; margin-top:320px">
+		<div class="">
+			<div class="row">
+				<div class="col-3 ml-3 bg-white" style="height:100px">
+					<div class="row">
+						<div style="background:url(weap1.png); background-size:100% 100%;" class="col-4">
+
+						</div>
+						<div class="col-3">
+							<p class="mt-1 mb-1"><span class="cashs_1">10</span>р</p>
+							<p class="mt-1 mb-1">+1</p>
+							<button class="btn_1">Купить</button>
+						</div>
+					</div>
+				</div>
+				<div class="col-3 ml-5 bg-white" style="height:100px">
+					<div class="row">
+						<div style="background:url(weap6.png); background-size:100% 100%;" class="col-4">
+
+						</div>
+						<div class="col-3">
+							<p class="mt-1 mb-1"><span class="cashs_6">200000</span>р</p>
+							<p class="mt-1 mb-1">+180000</p>
+							<button class="btn_6">Купить</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row mt-2">
+				<div class="col-3 ml-3 bg-white" style="height:100px">
+					<div class="row">
+						<div style="background:url(weap2.png); background-size:100% 100%;" class="col-4">
+
+						</div>
+						<div class="col-3">
+							<p class="mt-1 mb-1"><span class="cashs_2">100</span>р</p>
+							<p class="mt-1 mb-1">+20</p>
+							<button class="btn_2">Купить</button>
+						</div>
+					</div>
+				</div>
+				<div class="col-3 ml-5 bg-white" style="height:100px">
+					<div class="row">
+						<div style="background:url(weap7.png); background-size:100% 100%;" class="col-4">
+
+						</div>
+						<div class="col-3">
+							<p class="mt-1 mb-1"><span class="cashs_7">1500000</span>р</p>
+							<p class="mt-1 mb-1">+2100000</p>
+							<button class="btn_7">Купить</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row mt-2">
+				<div class="col-3 ml-3 bg-white" style="height:100px">
+					<div class="row">
+						<div style="background:url(weap3.png); background-size:100% 100%;" class="col-4">
+
+						</div>
+						<div class="col-3">
+							<p class="mt-1 mb-1"><span class="cashs_3">500</span>р</p>
+							<p class="mt-1 mb-1">+150</p>
+							<button class="btn_3">Купить</button>
+						</div>
+					</div>
+				</div>
+				<div class="col-3 ml-5 bg-white" style="height:100px">
+					<div class="row">
+						<div style="background:url(weap8.png); background-size:100% 100%;" class="col-4">
+
+						</div>
+						<div class="col-3">
+							<p class="mt-1 mb-1"><span class="cashs_8">10000000</span>р</p>
+							<p class="mt-1 mb-1">+25000000</p>
+							<button class="btn_8">Купить</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row mt-2">
+				<div class="col-3 ml-3 bg-white" style="height:100px">
+					<div class="row">
+						<div style="background:url(weap4.png); background-size:100% 100%;" class="col-4">
+
+						</div>
+						<div class="col-3">
+							<p class="mt-1 mb-1"><span class="cashs_4">5000</span>р</p>
+							<p class="mt-1 mb-1">+2000</p>
+							<button class="btn_4">Купить</button>
+						</div>
+					</div>
+				</div>
+				<div class="col-3 ml-5 bg-white" style="height:100px">
+					<div class="row">
+						<div style="background:url(weap9.png); background-size:100% 100%;" class="col-4">
+
+						</div>
+						<div class="col-3">
+							<p class="mt-1 mb-1"><span class="cashs_9">150000000</span>р</p>
+							<p class="mt-1 mb-1">+550000000</p>
+							<button class="btn_9">Купить</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row mt-2">
+				<div class="col-3 ml-3 bg-white" style="height:100px">
+					<div class="row">
+						<div style="background:url(weap5.png); background-size:100% 100%;" class="col-4">
+
+						</div>
+						<div class="col-3">
+							<p class="mt-1 mb-1"><span class="cashs_5">25000</span>р</p>
+							<p class="mt-1 mb-1">+15000</p>
+							<button class="btn_5">Купить</button>
+						</div>
+					</div>
+				</div>
+				<div class="col-4 ml-5 bg-warning" style="height:100px">
+					<div class="row">
+						<div style="background:url(weap10.png); background-size:100% 100%;" class="col-4">
+
+						</div>
+						<div class="col-3">
+							<p class="mt-1 mb-1"><span class="cashs_10">100000000000</span>р</p>
+							<p class="mt-1 mb-1">+5000000000000</p>
+							<button class="btn_10">Купить</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="monster col-6 struct" style="height:600px; margin-top:360px;">
+		<div class="monster_img col-6" style ="background-image:url(1.png); background-size:100% 100%; height:300px">
+			
+		</div>
+		<div class="boss4 absolute col-1" style="background-image:url(stop.png); background-size:100% 100%; height: 50px; left:38%; top:34%">
+		
+		</div>
+		<div class="boss4 absolute col-1" style="background-image:url(stop.png); background-size:100% 100%; height: 50px; left:29%; top:33%">
+		
+		</div>
+		<button class="absolute struct downs" style="left:15%; top:50%;"> < </button>
+	<button class="absolute struct ups" style="left:85%; top:50%;"> > </button>
+
+	</div>
+</div>
+	<script type="text/javascript">
+		let menu = document.querySelector(".menu");
+		let menu_btn = document.querySelector(".menu_btn");
+
+		let arena1 = document.querySelector(".arena1");
+		let continues = document.querySelector(".continue");
+		let restart = document.querySelector(".restart");
+		let end = document.querySelector(".end");
+		
+		let images = document.querySelector(".images");
+
+		let struct = document.querySelectorAll(".struct");
+
+		let monster = document.querySelectorAll(".monster");
+		let monsters_1 = ["url(1.png)", "url(2.png)", "url(3.png)", "url(4.png)", "url(5.png)", "url(6.png)", "url(7.png)", "url(8.png)", "url(9.png)", "url(10.png)", "url(11.png)", "url(12.png)", "url(13.png)", "url(14.png)"];
+		let monsters_2 = ["url(2_1.png)","url(2_2.png)", "url(2_3.png)", "url(2_4.png)", "url(2_5.png)", "url(2_6.png)", "url(2_7.png)", "url(2_8.png)", "url(2_9.png)", "url(2_10.png)"];
+		let monsters_3 = ["url(3_1.png)","url(3_2.png)", "url(3_3.png)", "url(3_4.png)", "url(3_5.png)", "url(3_6.png)", "url(3_7.png)", "url(3_8.png)", "url(3_9.png)", "url(3_10.png)"];
+		let monsters_4 = ["url(4_1.png)","url(4_2.png)", "url(4_3.png)", "url(4_4.png)", "url(4_5.png)", "url(4_6.png)", "url(4_7.png)", "url(4_8.png)"];
+		let monsters_5 = ["url(5_1.png)","url(5_2.png)", "url(5_3.png)", "url(5_4.png)"];
+		let monster_img = document.querySelector(".monster_img");
+		let hp = document.querySelector(".hp");
+		let hp5 = document.querySelectorAll(".hp5");
+		let hep = document.querySelector(".hep");
+		let health = document.querySelector(".health");
+		let health5 = document.querySelectorAll(".health5");
+		let timer = document.querySelector(".timer");
+		let long = 400;
+		let long2 = 400;
+		let long3 = 400;
+		let BossTime = 0;
+		let structBoss = document.querySelector(".structBoss");
+		let boss4 = document.querySelectorAll(".boss4");
+		let boss5 = document.querySelectorAll(".boss5");
+		let bossF = document.querySelector(".bossF");
+		let skill = document.querySelector(".skill");
+
+		let dmg = document.querySelector(".dmg");
+		let damage = 1;
+		let cash = document.querySelector(".cash");
+		let money = 1000000000000000;
+		let level = document.querySelector(".level");
+		let lvl = 1;
+		let max = 51;
+		let click = 0;
+		let count = 0;
+		let count_1 = 0;
+		let boss4skill = 0;
+		let final = 0;
+
+		let btn1 = document.querySelector(".btn_1");
+		let btn2 = document.querySelector(".btn_2");
+		let btn3 = document.querySelector(".btn_3");
+		let btn4 = document.querySelector(".btn_4");
+		let btn5 = document.querySelector(".btn_5");
+		let btn6 = document.querySelector(".btn_6");
+		let btn7 = document.querySelector(".btn_7");
+		let btn8 = document.querySelector(".btn_8");
+		let btn9 = document.querySelector(".btn_9");
+		let btn10 = document.querySelector(".btn_10");
+
+		let cashs_1 = document.querySelector(".cashs_1");
+		let cashs_2 = document.querySelector(".cashs_2");
+		let cashs_3 = document.querySelector(".cashs_3");
+		let cashs_4 = document.querySelector(".cashs_4");
+		let cashs_5 = document.querySelector(".cashs_5");
+		let cashs_6 = document.querySelector(".cashs_6");
+		let cashs_7 = document.querySelector(".cashs_7");
+		let cashs_8 = document.querySelector(".cashs_8");
+		let cashs_9 = document.querySelector(".cashs_9");
+		let cashs_10 = document.querySelector(".cashs_10");
+
+		let cashs = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+
+		let ups = document.querySelector(".ups");
+		let downs = document.querySelector(".downs");
+
+		let getRandom = function() {
+			let n=Math.random()*monsters_1.length;
+			n = Math.round(n);
+			return n;
+		}
+		let getRandom2 = function() {
+			let n=Math.random()*monsters_2.length;
+			n = Math.round(n);
+			return n;
+		}
+		let getRandom3 = function() {
+			let n=Math.random()*monsters_3.length;
+			n = Math.round(n);
+			return n;
+		}
+		let getRandom4 = function() {
+			let n=Math.random()*monsters_4.length;
+			n = Math.round(n);
+			return n;
+		}
+		let getRandom5 = function() {
+			let n=Math.random()*monsters_5.length;
+			n = Math.round(n);
+			return n;
+		}
+		let getRandomBoss30 = function() {
+			let n=Math.random()*11900000 + 100000;
+			n = Math.round(n);
+			return n;
+		}
+		let getRandomBoss50 = function() {
+			let n=Math.random()*50000000 + 100000;
+			n = Math.round(n);
+			return n;
+		}
+		let m1 = {
+			hp:(25 * lvl * lvl * lvl),
+			time:10,
+			random: getRandomBoss30(),
+		}
+		let time = function () {
+			if (lvl == 30 && click <= 10 && m1.hp < m1.random && count_1 < 1 && BossTime <= 5) {
+				BossTime = BossTime + 1;
+				skill.innerHTML = 5 - BossTime;
+			}
+			if (lvl == 30 && click <= 10 && count_1 == 1 && BossTime <= 5) {
+				BossTime = BossTime + 1;
+				skill.innerHTML = 5 - BossTime;
+			}
+			if (BossTime > 5) {
+				structBoss.style.display = "none";
+			}
+			m1.time = m1.time - 1;
+			timer.innerHTML = m1.time;
+			if (m1.time <= 0) {
+				boss4[0].style.display = "none";
+				boss4[1].style.display = "none";
+				boss4skill = 0;
+				BossTime = 0;
+				if (lvl == max && lvl != 1) {
+					lvl = lvl - 1;
+					if (lvl != 10 && lvl != 20 && lvl != 30 && lvl != 40 && lvl != 50) {
+						level.innerHTML = lvl;
+					}
+					if (lvl == 10) {
+						level.innerHTML = "BOSS - 10";
+					}
+					if (lvl == 20) {
+						level.innerHTML = "BOSS - 20";
+					}
+					if (lvl == 30) {
+						level.innerHTML = "BOSS - 30";
+					}
+					if (lvl == 40) {
+						level.innerHTML = "BOSS - 40";
+					}
+					if (lvl == 50) {
+						level.innerHTML = "BOSS - FINAL";
+					}
+				}
+				if (lvl != 50) {
+					bossF.style.top = 33 + "%";
+					boss5[0].style.top = 39 + "%";
+					boss5[1].style.top = 45 + "%";
+					for (i=0; i<boss5.length; i=i+1) {
+						boss5[i].style.display = "none";
+					}
+				}
+				if (lvl == 50) {
+					long=400;
+					for (let i=0; i<health5.length; i=i+1) {
+						health5[i].style.width = long + "px";
+						health5[i].style.background = "#41D600";
+					}
+				}
+				click = 0;
+				count_1 = 0;
+				health.style.background = "#41D600"
+				long = 400;
+				health.style.width = long + "px";
+				if (lvl == 10 || lvl == 20 || lvl == 30 || lvl == 40 || lvl == 50) {
+					m1.time = 30;
+				}
+				if (lvl != 10 && lvl != 20 && lvl != 30 && lvl != 40 && lvl != 50) {
+					m1.time = 10;
+				}
+				timer.innerHTML = m1.time;
+				if (lvl == 10 || lvl == 20 || lvl == 30 || lvl == 40) {
+				m1.hp = (25 * lvl * lvl * lvl * lvl);
+				}
+				if (lvl == 50 && boss4skill == 0) {
+				monster_img.style.backgroundImage = "url(boss5.png)";
+				m1.hp = (25 * lvl * lvl * lvl * lvl * lvl);
+				hp.innerHTML = m1.hp;
+				m1.hp = (25 * lvl * lvl * lvl * lvl);
+					for (i=0; i<hp5.length; i=i+1) {
+						hp5[i].innerHTML = m1.hp;
+					}
+				boss4skill = 2;
+					for (i=0; i<boss5.length; i=i+1) {
+						boss5[i].style.display = "block";
+					}
+			}
+				if (lvl != 10 &&  lvl != 20 && lvl != 30 && lvl != 40 && lvl != 50) {
+				m1.hp = (25 * lvl * lvl * lvl);
+				}
+				m1.hp = Math.round(m1.hp);
+				if (lvl != 50) {
+				hp.innerHTML = m1.hp;
+				}
+				if (lvl < 10) {
+				monster_img.style.backgroundImage = monsters_1[getRandom()];
+				}
+				if (lvl > 10 && lvl < 20) {
+				monster_img.style.backgroundImage = monsters_2[getRandom2()];
+				}
+				if (lvl > 20 && lvl < 30) {
+				m1.hp = (25 * lvl * lvl * lvl);
+				monster_img.style.backgroundImage = monsters_3[getRandom3()];
+				}
+				if (lvl > 30 && lvl < 40) {
+				m1.hp = (25 * lvl * lvl * lvl);
+				monster_img.style.backgroundImage = monsters_4[getRandom4()];
+				}
+				if (lvl > 40 && lvl != 50) {
+				m1.hp = (25 * lvl * lvl * lvl);
+				monster_img.style.backgroundImage = monsters_5[getRandom5()];
+				}
+				if (lvl == 10) {
+					monster_img.style.backgroundImage = "url(boss1.png)";
+				}
+				if (lvl == 20) {
+					monster_img.style.backgroundImage = "url(boss2.png)";
+				}
+				if (lvl == 30) {
+					monster_img.style.backgroundImage = "url(boss3.png)";
+				}
+				if (lvl == 40) {
+					monster_img.style.backgroundImage = "url(boss4.png)";
+				}
+				if (lvl == 50) {
+					monster_img.style.backgroundImage = "url(boss5.png)";
+				}
+			}
+		}
+		setInterval(time, 1000);
+		menu_btn.onclick = function () {
+			damage = 1;
+			max = 1;
+			lvl = 1;
+			money = 0;
+			final = 0;
+			m1.time = 10;
+			timer.innerHTML = m1.time;	
+			cash.innerHTML = money;
+			level.innerHTML = lvl;
+			m1.hp = (25 * lvl * lvl * lvl)
+			menu.style.display = "none";
+			arena1.style.display = "block";
+			images.style.backgroundImage = "url(arena1.jpg)";
+			monster_img.style.backgroundImage = monsters_1[getRandom()];
+			for (let i=0; i<struct.length; i=i+1) {
+				struct[i].style.display = "block";
+			};
+			for (let i=0; i<hp5.length; i=i+1) {
+				hp5[i].innerHTML = m1.hp_2;
+			}
+			m1.time = 10;
+			m1.hp = Math.round(m1.hp);
+			hp.innerHTML = m1.hp;
+			dmg.innerHTML = damage;
+
+		}
+		/*(10/100 * (100+cashs[0]))*/
+		btn1.onclick = function () {
+			let x = (10/100 * (100 + cashs[0]));
+			x = Math.round(x);
+			if (money >= x) {
+				damage = damage + 1;
+				dmg.innerHTML = damage;
+				money = money - x;
+				cashs[0] = (cashs[0] + 10) * 1.1;
+				x = (10/100 * (100 + cashs[0]));
+				x = Math.round(x);
+				cash.innerHTML = money;
+				cashs_1.innerHTML = x;
+			};
+		}
+
+		btn2.onclick = function () {
+			let x = (100/100 * (100 + cashs[1]));
+			x = Math.round(x);
+			if (money >= x) {
+				damage = damage + 20;
+				dmg.innerHTML = damage;
+				money = money - x;
+				cashs[1] = cashs[1] + 10;
+				cashs[1] = cashs[1] * 1.1;
+				x = (100/100 * (100 + cashs[1]));
+				x = Math.round(x);
+				cash.innerHTML = money;
+				cashs_2.innerHTML = x;
+			}
+		}
+
+		btn3.onclick = function () {
+			let x = (500/100 * (100 + cashs[2]));
+			x = Math.round(x);
+			if (money >= x) {
+				damage = damage + 150;
+				dmg.innerHTML = damage;
+				money = money - x;
+				cashs[2] = cashs[2] + 10;
+				cashs[2] = cashs[2] * 1.1;
+				x = (500/100 * (100 + cashs[2]));
+				x = Math.round(x);
+				cash.innerHTML = money;
+				cashs_3.innerHTML = x;
+			}
+		}
+
+		btn4.onclick = function () {
+			let x = (5000/100 * (100+cashs[3]));
+			x = Math.round(x);
+			if (money >= x) {
+				damage = damage + 2000;
+				dmg.innerHTML = damage;
+				money = money - x;
+				cashs[3] = cashs[3] + 10;
+				cashs[3] = cashs[3] * 1.1;
+				x = (5000/100 * (100 + cashs[3]));
+				x = Math.round(x);
+				cash.innerHTML = money;
+				cashs_4.innerHTML = x;
+			}
+		}
+		btn5.onclick = function () {
+			let x = (25000/100 * (100+cashs[4]));
+			x = Math.round(x);
+			if (money >= x) {
+				damage = damage + 15000;
+				dmg.innerHTML = damage;
+				money = money - x;
+				cashs[4] = cashs[4] + 10;
+				cashs[4] = cashs[4] * 1.1;
+				x = (25000/100 * (100 + cashs[4]));
+				x = Math.round(x);
+				cash.innerHTML = money;
+				cashs_5.innerHTML = x;
+			}
+		}
+		btn6.onclick = function () {
+			let x = (200000/100 * (100+cashs[5]));
+			x = Math.round(x);
+			if (money >= x) {
+				damage = damage + 180000;
+				dmg.innerHTML = damage;
+				money = money - x;
+				cashs[5] = cashs[5] + 10;
+				cashs[5] = cashs[5] * 1.1;
+				x = (200000/100 * (100 + cashs[5]));
+				x = Math.round(x);
+				cash.innerHTML = money;
+				cashs_6.innerHTML = x;
+			}
+		}
+		btn7.onclick = function () {
+			let x = (1500000/100 * (100+cashs[6]));
+			x = Math.round(x);
+			if (money >= x) {
+				damage = damage + 2100000;
+				dmg.innerHTML = damage;
+				money = money - x;
+				cashs[6] = cashs[6] + 10;
+				cashs[6] = cashs[6] * 1.1;
+				x = (1500000/100 * (100 + cashs[6]));
+				x = Math.round(x);
+				cash.innerHTML = money;
+				cashs_7.innerHTML = x;
+			}
+		}
+		btn8.onclick = function () {
+			let x = (10000000/100 * (100+cashs[7]));
+			x = Math.round(x);
+			if (money >= x) {
+				damage = damage + 25000000;
+				dmg.innerHTML = damage;
+				money = money - x;
+				cashs[7] = cashs[7] + 10;
+				cashs[7] = cashs[7] * 1.1;
+				x = (10000000/100 * (100 + cashs[7]));
+				x = Math.round(x);
+				cash.innerHTML = money;
+				cashs_8.innerHTML = x;
+			}
+		}
+		btn9.onclick = function () {
+			let x = (150000000/100 * (100+cashs[8]));
+			x = Math.round(x);
+			if (money >= x) {
+				damage = damage + 550000000;
+				dmg.innerHTML = damage;
+				money = money - x;
+				cashs[8] = cashs[8] + 10;
+				cashs[8] = cashs[8] * 1.1;
+				x = (150000000/100 * (100 + cashs[8]));
+				x = Math.round(x);
+				cash.innerHTML = money;
+				cashs_9.innerHTML = x;
+			}
+		}
+		btn10.onclick = function () {
+			let x = (5000000000000/100 * (100+cashs[9]));
+			x = Math.round(x);
+			if (money >= x) {
+				damage = damage + 5000000000000;
+				dmg.innerHTML = damage;
+				money = money - x;
+				cashs[9] = cashs[9] + 10;
+				cashs[9] = cashs[9] * 1.1;
+				x = (5000000000000/100 * (100 + cashs[9]));
+				x = Math.round(x);
+				cash.innerHTML = money;
+				cashs_10.innerHTML = x;
+			}
+		}
+		ups.onclick = function () {
+			boss4[0].style.display = "none";
+			boss4[1].style.display = "none";
+			boss4skill = 0;
+			lvl = lvl + 1;
+			BossTime = 0;
+			if (lvl != 50) {
+					bossF.style.top = 33 + "%";
+					boss5[0].style.top = 39 + "%";
+					boss5[1].style.top = 45 + "%";
+					for (i=0; i<boss5.length; i=i+1) {
+						boss5[i].style.display = "none";
+					}
+				}
+			if (lvl <= max && lvl < 10) {
+				monster_img.style.backgroundImage = monsters_1[getRandom()];
+			}
+			if (lvl <= max && lvl > 10 && lvl < 20) {
+				monster_img.style.backgroundImage = monsters_2[getRandom2()];
+			}
+			if (lvl <= max && lvl > 20 && lvl < 30) {
+				monster_img.style.backgroundImage = monsters_3[getRandom3()];
+			}
+			if (lvl <= max && lvl > 30 && lvl < 40) {
+				monster_img.style.backgroundImage = monsters_4[getRandom4()];
+			}
+			if (lvl <= max && lvl > 40 && lvl != 50) {
+				monster_img.style.backgroundImage = monsters_5[getRandom5()];
+			}
+			if (lvl > max) {
+				lvl = lvl - 1;
+			}
+			if (lvl != max) {
+					click = 0;
+					count_1 = 0;
+				}
+			if (lvl == 10 && lvl <= max) {
+				monster_img.style.backgroundImage = "url(boss1.png)";
+			}
+			if (lvl == 20 && lvl <= max) {
+				monster_img.style.backgroundImage = "url(boss2.png)";
+			}
+			if (lvl == 30 && lvl <= max) {
+				monster_img.style.backgroundImage = "url(boss3.png)";
+			}
+			if (lvl == 40 && lvl <= max) {
+				monster_img.style.backgroundImage = "url(boss4.png)";
+			}
+			if (lvl == 50 && lvl <= max) {
+				monster_img.style.backgroundImage = "url(boss5.png)";
+			}
+			if (lvl == 50) {
+					long=400;
+					for (let i=0; i<health5.length; i=i+1) {
+						health5[i].style.width = long + "px";
+						health5[i].style.background = "#41D600";
+					}
+				}
+			health.style.background = "#41D600";
+			long = 400;
+			health.style.width = long + "px";
+			if (lvl == 10 || lvl == 20 || lvl == 30 || lvl == 40 || lvl == 50) {
+				m1.time = 30;
+			}
+			if (lvl != 10 && lvl != 20 && lvl != 30 && lvl != 40 && lvl != 50) {
+				m1.time = 10;
+			}
+			if (lvl > 20 && lvl <= 30) {
+					images.style.backgroundImage = "url(arena3.jpg)";
+			}
+			if (lvl > 10 && lvl <= 20) {
+					images.style.backgroundImage = "url(arena2.png)";
+			}
+			if (lvl <= 10) {
+					images.style.backgroundImage = "url(arena1.jpg)";
+			}
+			if (lvl > 30 && lvl <= 40) {
+					images.style.backgroundImage = "url(arena4.jpg)";
+			}
+			if (lvl > 40) {
+					images.style.backgroundImage = "url(arena5.jpg)";
+			}
+			timer.innerHTML = m1.time;
+			if (lvl != 10 && lvl != 20 && lvl != 30 && lvl != 40 && lvl != 50) {
+						level.innerHTML = lvl;
+			}
+			if (lvl == 10) {
+						level.innerHTML = "BOSS - 10";
+			}
+			if (lvl == 20) {
+						level.innerHTML = "BOSS - 20";
+			}
+			if (lvl == 30) {
+						level.innerHTML = "BOSS - 30";
+			}
+			if (lvl == 40) {
+						level.innerHTML = "BOSS - 40";
+			}
+			if (lvl == 50) {
+						level.innerHTML = "BOSS - FINAL";
+			}
+			if (lvl != 10 && lvl != 20 && lvl != 30 && lvl != 40 && lvl != 50) {
+				m1.hp = (25 * lvl * lvl * lvl);
+			}
+			if (lvl == 10 || lvl == 20 || lvl == 30 || lvl == 40) {
+				m1.hp = (25 * lvl * lvl * lvl * lvl);
+			}
+			if (lvl == 50 && boss4skill == 0) {
+				monster_img.style.backgroundImage = "url(boss5.png)";
+				m1.hp = (25 * lvl * lvl * lvl * lvl * lvl);
+				hp.innerHTML = m1.hp;
+				m1.hp = (25 * lvl * lvl * lvl * lvl);
+					for (i=0; i<hp5.length; i=i+1) {
+						hp5[i].innerHTML = m1.hp;
+					}
+				boss4skill = 2;
+					for (i=0; i<boss5.length; i=i+1) {
+						boss5[i].style.display = "block";
+					}
+					bossF.style.top = 45 + "%";
+					boss5[0].style.top = 33 + "%";
+					boss5[1].style.top = 39 + "%";
+				}
+			m1.hp = Math.round(m1.hp);
+			if (lvl != 50) {
+				hp.innerHTML = m1.hp;
+			}
+
+		}
+
+		downs.onclick = function () {
+			boss4[0].style.display = "none";
+			boss4[1].style.display = "none";
+			boss4skill = 0;
+			lvl = lvl - 1;
+			if (lvl != 50) {
+					bossF.style.top = 33 + "%";
+					boss5[0].style.top = 39 + "%";
+					boss5[1].style.top = 45 + "%";
+					for (i=0; i<boss5.length; i=i+1) {
+						boss5[i].style.display = "none";
+					}
+			}
+			BossTime = 0;
+			if (lvl >= 1 && lvl < 10) {
+				monster_img.style.backgroundImage = monsters_1[getRandom()];
+			}
+			if (lvl > 10 && lvl < 20) {
+				monster_img.style.backgroundImage = monsters_2[getRandom2()];
+			}
+			if (lvl > 20 && lvl < 30) {
+				monster_img.style.backgroundImage = monsters_3[getRandom3()];
+			}
+			if (lvl > 30 && lvl < 40) {
+				monster_img.style.backgroundImage = monsters_4[getRandom4()];
+			}
+			if (lvl > 40 && lvl != 50) {
+				monster_img.style.backgroundImage = monsters_5[getRandom5()];
+			}
+			if (lvl == 10) {
+				monster_img.style.backgroundImage = "url(boss1.png)";
+			}
+			if (lvl == 20) {
+				monster_img.style.backgroundImage = "url(boss2.png)";
+			}
+			if (lvl == 30) {
+				monster_img.style.backgroundImage = "url(boss3.png)";
+			}
+			if (lvl == 40) {
+				monster_img.style.backgroundImage = "url(boss4.png)";
+			}
+			if (lvl == 50) {
+				monster_img.style.backgroundImage = "url(boss5.png)";
+			}
+			if (lvl < 1) {
+				lvl = lvl + 1;
+			}
+			if (lvl == 50) {
+					long=400;
+					for (let i=0; i<health5.length; i=i+1) {
+						health5[i].style.width = long + "px";
+						health5[i].style.background = "#41D600";
+					}
+				}
+			click = 0;
+			count_1 = 0;
+			health.style.background = "#41D600";
+			long = 400;
+			health.style.width = long + "px";
+			if (lvl == 10 || lvl == 20 || lvl == 30 || lvl == 40 || lvl == 50) {
+				m1.time = 30;
+			}
+			if (lvl != 10 && lvl != 20 && lvl != 30 && lvl != 40 && lvl != 50) {
+				m1.time = 10;
+			}
+			if (lvl > 30 && lvl <= 40) {
+					images.style.backgroundImage = "url(arena4.jpg)";
+			}
+			if (lvl > 40) {
+					images.style.backgroundImage = "url(arena5.jpg)";
+			}
+			if (lvl > 20 && lvl <= 30) {
+				images.style.backgroundImage = "url(arena3.jpg)";
+			}
+			if (lvl > 10 && lvl <= 20) {
+				images.style.backgroundImage = "url(arena2.png)";
+			}
+			if (lvl <= 10) {
+				images.style.backgroundImage = "url(arena1.jpg)";
+			}
+			timer.innerHTML = m1.time;
+			if (lvl != 10 && lvl != 20 && lvl != 30 && lvl != 40 && lvl != 50) {
+						level.innerHTML = lvl;
+			}
+			if (lvl == 10) {
+						level.innerHTML = "BOSS - 10";
+			}
+			if (lvl == 20) {
+						level.innerHTML = "BOSS - 20";
+			}
+			if (lvl == 30) {
+						level.innerHTML = "BOSS - 30";
+			}
+			if (lvl == 40) {
+						level.innerHTML = "BOSS - 40";
+			}
+			if (lvl == 50) {
+						level.innerHTML = "BOSS - FINAL";
+			}
+			if (lvl != 10 && lvl != 20 && lvl != 30 && lvl != 40 && lvl != 50) {
+				m1.hp = (25 * lvl * lvl * lvl);
+			}
+			if (lvl == 10 || lvl == 20 || lvl == 30 || lvl == 40) {
+			m1.hp = (25 * lvl * lvl * lvl * lvl);
+			}
+			if (lvl == 50 && boss4skill == 0) {
+				monster_img.style.backgroundImage = "url(boss5.png)";
+				m1.hp = (25 * lvl * lvl * lvl * lvl * lvl);
+				hp.innerHTML = m1.hp;
+				m1.hp = (25 * lvl * lvl * lvl * lvl);
+					for (i=0; i<hp5.length; i=i+1) {
+						hp5[i].innerHTML = m1.hp;
+					}
+				boss4skill = 2;
+				for (i=0; i<boss5.length; i=i+1) {
+						boss5[i].style.display = "block";
+					}
+					bossF.style.top = 45 + "%";
+					boss5[0].style.top = 33 + "%";
+					boss5[1].style.top = 39 + "%";
+			}
+			m1.hp = Math.round(m1.hp);
+			if (lvl != 50) {
+				hp.innerHTML = m1.hp;
+			}
+		}
+		let boss1_skill = function () {
+			if (lvl == 10) {
+				long = (long / m1.hp) * (m1.hp + 10000);
+				m1.hp = m1.hp + ((25 * lvl * lvl * lvl * lvl)/100 * 4);
+				if (m1.hp > 250000) {
+					m1.hp = 250000;
+					long = 400;
+				}
+				hp.innerHTML = m1.hp;
+				if (long < 300) {
+					health.style.background = "yellow";
+				}
+				if (long < 150) {
+					health.style.background = "orange";
+				}
+				if (long < 75) {
+					health.style.background = "red";
+				}
+				if (long > 300) {
+					health.style.background = "#41D600";
+				}
+				health.style.width = long + "px";
+			}
+			if (lvl == 50) {
+				if (m1.hp > 0 && boss4skill == 2) {
+					long = (long / m1.hp) * (m1.hp + ((25 * lvl * lvl * lvl * lvl)/100 * 4));
+					m1.hp = m1.hp + ((25 * lvl * lvl * lvl * lvl)/100 * 4);
+					if (m1.hp > 156250000) {
+						m1.hp = 156250000;
+						long = 400;
+					}
+					hp5[0].innerHTML = m1.hp;
+					if (long < 300) {
+						health5[0].style.background = "yellow";
+					}
+					if (long < 150) {
+						health5[0].style.background = "orange";
+					}
+					if (long < 75) {
+						health5[0].style.background = "red";
+					}
+					if (long >= 300) {
+						health5[0].style.background = "#41D600";
+					}
+					health5[0].style.width = long + "px";
+				}
+				
+			}
+			
+		}
+		setInterval(boss1_skill, 1000);
+		let boss2_skill = function () {
+			click == 100;
+			health.style.background = "grey";
+			hp.innerHTML = "clicks:"+ click;
+		}
+		let boss3_skill = function () {
+
+		}
+		for (i=0; i<boss4.length; i=i+1) {
+			boss4[i].onclick = function () {
+				if (boss4skill == 0) {
+				long = (long / m1.hp) * (m1.hp - damage);
+				m1.hp = m1.hp - damage;
+				}
+				if (boss4skill == 2) {
+				boss4[0].style.display = "block";
+				long = (long / m1.hp) * (m1.hp - (damage / (boss4skill * boss4skill)));
+				m1.hp = m1.hp - (damage / (boss4skill * boss4skill));
+				}
+				if (boss4skill == 4) {
+				boss4[1].style.display = "block";
+				long = (long / m1.hp) * (m1.hp - (damage / (boss4skill * boss4skill)));
+				m1.hp = m1.hp - (damage / (boss4skill * boss4skill));
+				}
+				if (lvl == 40 && m1.hp <= 0 && boss4skill < 4) {
+				long = 400;
+				boss4skill = boss4skill + 2;
+				m1.hp = (25 * lvl * lvl * lvl * lvl)/boss4skill;
+				}
+
+				m1.hp = Math.round(m1.hp);
+				if (long < 300) {
+				health.style.background = "yellow";
+				}
+				if (long < 150) {
+				health.style.background = "orange";
+				}
+				if (long < 75) {
+				health.style.background = "red";
+				}
+				if (long >= 300) {
+				health.style.background = "#41D600";
+				}
+				hp.innerHTML = m1.hp;
+				health.style.width = long + "px";
+				if (m1.hp <= 0) {
+				boss4skill = 0;
+				BossTime = 0;
+				count_1 = 0;
+				click = 0;
+				health.style.background = "#41D600"
+				long = 400;
+				health.style.width = long + "px";
+				money = money + 10 * lvl * lvl * lvl;
+				cash.innerHTML = money;
+				timer.innerHTML = m1.time;
+				if (lvl == max) {
+					max = max + 1;
+					lvl = lvl + 1;
+					if (lvl != 40) {
+						level.innerHTML = lvl;
+					}
+					if (lvl == 40) {
+						level.innerHTML = "BOSS - 40";
+					}
+				}
+				if (lvl == 40) {
+					m1.time = 30;
+				}
+				if (lvl != 40) {
+					m1.time = 10;
+				}
+				if (lvl == 40) {
+				monster_img.style.backgroundImage = "url(boss4.png)";
+				m1.hp = (25 * lvl * lvl * lvl * lvl);
+				}
+				if (lvl > 30) {
+					images.style.backgroundImage = "url(arena4.jpg)";
+				}
+				if (lvl > 30 && lvl < 40) {
+					m1.hp = (25 * lvl * lvl * lvl);
+					monster_img.style.backgroundImage = monsters_4[getRandom4()];
+				}
+				if (lvl > 40 && lvl != 40) {
+					m1.hp = (25 * lvl * lvl * lvl);
+					monster_img.style.backgroundImage = monsters_5[getRandom5()];
+				}
+					boss4[0].style.display = "none";
+					boss4[1].style.display = "none";
+			}
+		}
+		}
+		restart.onclick = function () {
+					menu.style.display = "block"
+					end.style.display = "none";
+					images.style.backgroundImage = "url(menu.jpg)"
+					final = 0;		
+				}
+		continues.onclick = function () {
+					arena1.style.display = "block";
+					for (i=0; i<monster.length; i=i+1) {
+						monster[i].style.display = "block";
+					}
+					for (i=0; i<struct.length; i=i+1) {
+						struct[i].style.display = "block";
+					}
+					end.style.display = "none";
+					m1.time = 10;
+					timer.innerHTML = m1.time;	
+					}
+		monster_img.onclick = function () {
+			if (lvl != 30 && lvl != 40 && lvl != 50) {
+				long = (long / m1.hp) * (m1.hp - damage);
+			}
+			if (lvl == 50) {
+				if (boss4skill == 0) {
+					long = (long / m1.hp) * (m1.hp - (damage/8));
+				}
+				if (boss4skill == 2) {
+					long = (long / m1.hp) * (m1.hp - (damage/16));
+				}
+				if (boss4skill == 4) {
+					long = (long / m1.hp) * (m1.hp - (damage/32));
+				}
+			}
+			if (lvl == 30) {
+				long = (long / m1.hp) * (m1.hp - 0.2 * damage);
+			}
+			if (lvl == 30 && m1.hp < m1.random && click <= 10 && count_1 < 1 && BossTime <= 5) {
+				long = (long / m1.hp) * (m1.hp + 1000000 + 0.2 * damage);
+				structBoss.style.display = "block";
+			}
+			if (lvl == 30 && click <= 10 && count_1 == 1 && BossTime <= 5) {
+				long = (long / m1.hp) * (m1.hp + 1000000 + 0.2 * damage);
+				structBoss.style.display = "block";
+			}
+			if (click > 10) {
+				structBoss.style.display = "none";
+			}
+			if (lvl == 30 && m1.hp > (25 * lvl * lvl * lvl * lvl)) {
+				m1.hp = (25 * lvl * lvl * lvl * lvl);
+			}
+			if (lvl == 30) {
+				m1.hp = m1.hp - damage * 0.2;
+			}
+			if (lvl == 30 && m1.hp < m1.random && click <= 10 && count_1 < 1 && BossTime <= 5) {
+				click = click + 1;
+				m1.hp = m1.hp + 1000000 + damage * 0.2;
+				count_1 = count_1 + 1;
+				skill.innerHTML = 5 - BossTime;
+			}
+			if (lvl == 30 && click <= 10 && count_1 == 1 && BossTime <= 5)
+			{
+				click = click + 1;
+				m1.hp = m1.hp + 1000000 + damage * 0.2;
+				skill.innerHTML = 5 - BossTime;
+			}
+			if (lvl != 50 || lvl != 30) {
+				long = (long / m1.hp) * (m1.hp - damage);
+				m1.hp = m1.hp - damage;
+			}
+			if (lvl == 50) {
+				if (boss4skill == 2) {
+					m1.hp = m1.hp - (damage/16);
+					m1.hp = Math.round(m1.hp);
+					hp5[0].innerHTML = m1.hp;
+				}
+				if (boss4skill == 4) {
+					m1.hp = m1.hp - (damage/32);
+					m1.hp = Math.round(m1.hp);
+					hp5[1].innerHTML = m1.hp;
+				}
+				if (boss4skill == 0) {
+					m1.hp = m1.hp - (damage/8);
+					m1.hp = Math.round(m1.hp);
+					hp.innerHTML = m1.hp;
+				}
+			}
+			if (boss4skill == 2 && lvl == 40) {
+				boss4[0].style.display = "block";
+				long = (long / m1.hp) * (m1.hp - (damage / (boss4skill * boss4skill)));
+				m1.hp = m1.hp - (damage / (boss4skill * boss4skill));
+			}
+			if (boss4skill == 4 && lvl == 40) {
+				boss4[1].style.display = "block";
+				long = (long / m1.hp) * (m1.hp - (damage / (boss4skill * boss4skill)));
+				m1.hp = m1.hp - (damage / (boss4skill * boss4skill));
+			}
+			if (lvl == 40 && m1.hp <= 0 && boss4skill < 4) {
+				long = 400;
+				boss4skill = boss4skill + 2;
+				m1.hp = (25 * lvl * lvl * lvl * lvl)/boss4skill;
+			}
+			if (long < 300) {
+				if (boss4skill == 0) {
+					health.style.background = "yellow";
+				}
+				if (boss4skill == 2 && lvl == 50) {
+					health5[0].style.background = "yellow";
+				}
+				if (boss4skill == 4 && lvl == 50) {
+					health5[1].style.background = "yellow";
+				}
+			}
+			if (long < 150) {
+				if (boss4skill == 0) {
+				health.style.background = "orange";
+				}
+				if (boss4skill == 2 && lvl == 50) {
+				health5[0].style.background = "orange";
+				}
+				if (boss4skill == 4 && lvl == 50) {
+				health5[1].style.background = "orange";
+				}
+			}
+			if (long < 75) {
+				if (boss4skill == 0) {
+				health.style.background = "red";
+				}
+				if (boss4skill == 2 && lvl == 50) {
+				health5[0].style.background = "red";
+				}
+				if (boss4skill == 4 && lvl == 50) {
+				health5[1].style.background = "red";
+				}
+			}
+			if (long >= 300) {
+				if (boss4skill == 0) {
+				health.style.background = "#41D600";
+				}
+				if (boss4skill == 2 && lvl == 50) {
+				health.style.background = "#41D600";
+				}
+				if (boss4skill == 4 && lvl == 50) {
+				health.style.background = "#41D600";
+				}
+			}
+			if (lvl != 50) {
+				m1.hp = Math.round(m1.hp);
+				hp.innerHTML = m1.hp;
+			}
+			if (lvl != 50) {
+				health.style.width = long + "px";
+			}
+			if (lvl == 50) {
+				if (boss4skill == 2) {
+					health5[0].style.width = long + "px";
+				}
+				if (boss4skill == 4) {
+					health5[1].style.width = long + "px";
+				}
+				if (boss4skill == 0) {
+					health.style.width = long + "px";
+				}
+			}
+			if (lvl == 20 && m1.hp <= 1200000 && click == 0) {
+				count = long;
+			}
+			if (lvl == 20 && m1.hp <= 1200000 && click < 100 && count_1 < 1) {
+				click = click + 1;
+				hp.innerHTML ="clicks:" + click + "/100";
+				long = 400;
+				health.style.background = "grey";
+				health.style.width = long + "px";
+				m1.hp = m1.hp + damage;
+				m1.hp = Math.round(m1.hp);
+			}
+			if (click == 100 && lvl == 20) {
+				long = count;
+				health.style.width = long + "px";
+				count_1 = count_1 + 1;
+				click = 0;
+			}
+			if (m1.hp <= 0 && lvl == 50 && boss4skill == 2) {
+					m1.hp = (25 * lvl * lvl * lvl * lvl);
+					hp5[1].innerHTML =  m1.hp;
+					boss4skill = 4;
+					long = 400;
+			}
+			if (m1.hp <= 0 && lvl == 50 && boss4skill == 4) {
+					m1.hp = (25 * lvl * lvl * lvl * lvl * lvl);
+					hp.innerHTML =  m1.hp;
+					boss4skill = 0;
+					long = 400;
+
+			}
+			if (lvl == 50 && m1.hp <= 50000000 && click == 0 && boss4skill == 4) {
+				count = long;
+			}
+			if (lvl == 50 && m1.hp <= 50000000 && click < 150 && count_1 < 1 && boss4skill == 4) {
+				click = click + 1;
+				hp5[1].innerHTML ="clicks:" + click + "/150";
+				long = 400;
+				health5[1].style.background = "grey";
+				health5[1].style.width = long + "px";
+				m1.hp = m1.hp + (damage/32);
+				m1.hp = Math.round(m1.hp);
+			}
+			if (click == 150 && lvl == 50 && boss4skill == 4) {
+				long = count;
+				health5[1].style.width = long + "px";
+				count_1 = count_1 + 1;
+				click = 0;
+			}
+			if (m1.hp <= 0) {
+				bossF.style.top = 33 + "%";
+				boss5[0].style.top = 39 + "%";
+				boss5[1].style.top = 45 + "%";
+				for (i=0; i<boss5.length; i=i+1) {
+						boss5[i].style.display = "none";
+					}
+				count_1 = 0;
+				click = 0;
+				health.style.background = "#41D600"
+				long = 400;
+				health.style.width = long + "px";
+				if (lvl != 10 && lvl != 20 && lvl != 30 && lvl != 40 && lvl != 50) {
+					money = money + 10 * lvl * lvl;
+				}
+				if (lvl == 10 || lvl == 20 || lvl == 30 || lvl == 40) {
+					money = money + 10 * lvl * lvl * lvl;
+				}
+				if (lvl == 50) {
+					money = money + 10 * lvl * lvl * lvl * lvl * lvl;
+				}
+				if (lvl == 50) {
+					long=400;
+					for (let i=0; i<health5.length; i=i+1) {
+						health5[i].style.width = long + "px";
+						health5[i].style.background = "#41D600";
+					}
+				}
+				cash.innerHTML = money;
+				timer.innerHTML = m1.time;
+				if (lvl == max) {
+					max = max + 1;
+					lvl = lvl + 1;
+					if (lvl != 10 && lvl != 20 && lvl != 30 && lvl != 40 && lvl != 50) {
+						level.innerHTML = lvl;
+					}
+					if (lvl == 10) {
+						level.innerHTML = "BOSS - 10";
+					}
+					if (lvl == 20) {
+						level.innerHTML = "BOSS - 20";
+					}
+					if (lvl == 30) {
+						level.innerHTML = "BOSS - 30";
+					}
+					if (lvl == 40) {
+						level.innerHTML = "BOSS - 40";
+					}
+					if (lvl == 50) {
+						level.innerHTML = "BOSS - FINAL";
+					}
+				}
+				if (lvl == 10 || lvl == 20 || lvl == 30 || lvl == 40 || lvl == 50) {
+					m1.time = 30;
+				}
+				if (lvl != 10 && lvl != 20 && lvl != 30 && lvl != 40 && lvl != 50) {
+					m1.time = 10;
+				}
+				if (lvl == 10) {
+				monster_img.style.backgroundImage = "url(boss1.png)";
+				m1.hp = (25 * lvl * lvl * lvl * lvl);
+				}
+				if (lvl == 20) {
+				monster_img.style.backgroundImage = "url(boss2.png)";
+				m1.hp = (25 * lvl * lvl * lvl * lvl);
+				}
+				if (lvl == 30) {
+				monster_img.style.backgroundImage = "url(boss3.png)";
+				m1.hp = (25 * lvl * lvl * lvl * lvl);
+				}
+				if (lvl == 40) {
+				monster_img.style.backgroundImage = "url(boss4.png)";
+				m1.hp = (25 * lvl * lvl * lvl * lvl);
+				}
+				if (lvl == 50 && boss4skill == 0) {
+				monster_img.style.backgroundImage = "url(boss5.png)";
+				m1.hp = (25 * lvl * lvl * lvl * lvl * lvl);
+				hp.innerHTML = m1.hp;
+				m1.hp = (25 * lvl * lvl * lvl * lvl);
+					for (i=0; i<hp5.length; i=i+1) {
+						hp5[i].innerHTML = m1.hp;
+					}
+				boss4skill = 2;
+					for (i=0; i<boss5.length; i=i+1) {
+						boss5[i].style.display = "block";
+					}
+					bossF.style.top = 45 + "%";
+					boss5[0].style.top = 33 + "%";
+					boss5[1].style.top = 39 + "%";
+				}
+				if (lvl > 10 && lvl <= 20) {
+					images.style.backgroundImage = "url(arena2.png)";
+				}
+				if (lvl > 20 && lvl <= 30) {
+					images.style.backgroundImage = "url(arena3.jpg)";
+				}
+				if (lvl <= 10) {
+					images.style.backgroundImage = "url(arena1.jpg)";
+				}
+				if (lvl > 30 && lvl <= 40) {
+					images.style.backgroundImage = "url(arena4.jpg)";
+				}
+				if (lvl > 40) {
+					images.style.backgroundImage = "url(arena5.jpg)";
+				}
+				if (lvl != 10 && lvl < 10) {
+					m1.hp = (25 * lvl * lvl * lvl);
+					monster_img.style.backgroundImage = monsters_1[getRandom()];
+				}
+				if (lvl > 10 && lvl < 20) {
+					m1.hp = (25 * lvl * lvl * lvl);
+					monster_img.style.backgroundImage = monsters_2[getRandom2()];
+				}
+				if (lvl > 20 && lvl < 30) {
+					m1.hp = (25 * lvl * lvl * lvl);
+					monster_img.style.backgroundImage = monsters_3[getRandom3()];
+				}
+				if (lvl > 30 && lvl < 40) {
+					m1.hp = (25 * lvl * lvl * lvl);
+					monster_img.style.backgroundImage = monsters_4[getRandom4()];
+				}
+				if (lvl > 40 && lvl != 50) {
+					m1.hp = (25 * lvl * lvl * lvl);
+					monster_img.style.backgroundImage = monsters_5[getRandom5()];
+				}
+					boss4[0].style.display = "none";
+					boss4[1].style.display = "none";
+				if (max == 51 && final < 1) {
+					arena1.style.display = "none";
+					for (i=0; i<monster.length; i=i+1) {
+						monster[i].style.display = "none";
+					}
+					for (i=0; i<struct.length; i=i+1) {
+						struct[i].style.display = "none";
+					}
+					end.style.display = "block";
+					final = final + 1;
+					m1.time = 50000000000000000000000;
+				}
+			}
+		}
+	</script> 
+</body>
+</html>
